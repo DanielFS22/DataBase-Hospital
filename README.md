@@ -12,3 +12,19 @@ As consultas também têm sido registradas em planilhas, com data e hora de real
 Deseja-se ainda informatizar a receita do médico, de maneira que, no encerramento da consulta, ele possa registrar os medicamentos receitados, a quantidade e as instruções de uso. A partir disso, espera-se que o sistema imprima um relatório da receita ao paciente ou permita sua visualização via internet.
 
 ![Diagrama em branco_ Lucidchart - Google Chrome 10_05_2024 23_08_49](https://github.com/DanielFS22/DataBase-Hospital/assets/161477598/04e6c5d7-bac4-4f71-a177-014fd27a40b8)
+
+🔹Parte 2 - Diagrama Entidade Relacionamento
+No hospital, as internações têm sido registradas por meio de formulários eletrônicos que gravam os dados em arquivos.
+
+Para cada internação, são anotadas a data de entrada, a data prevista de alta e a data efetiva de alta, além da descrição textual dos procedimentos a serem realizados.
+
+As internações precisam ser vinculadas a quartos, com a numeração e o tipo.
+
+Cada tipo de quarto tem sua descrição e o seu valor diário (a princípio, o hospital trabalha com apartamentos, quartos duplos e enfermaria).
+
+Também é necessário controlar quais profissionais de enfermaria estarão responsáveis por acompanhar o paciente durante sua internação. Para cada enfermeiro(a), é necessário nome, CPF e registro no conselho de enfermagem (CRE).
+
+A internação, obviamente, é vinculada a um paciente – que pode se internar mais de uma vez no hospital – e a um único médico responsável.
+
+Por último, crie um script SQL para a geração do banco de dados
+![Diagrama em branco_ Lucidchart e mais 6 páginas - Pessoal — Microsoft​ Edge 20_05_2024 19_34_20](https://github.com/DanielFS22/DataBase-Hospital/assets/161477598/c2456df9-18cd-4350-a9d8-7a6630cb6012)
