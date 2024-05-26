@@ -1,18 +1,7 @@
-create database Hospital;
+CREATE DATABASE IF NOT EXISTS Hospital;
 USE Hospital;
 
-USE Hospital;
-
-CREATE TABLE cadastro_paciente (
-    id_paciente INT AUTO_INCREMENT PRIMARY KEY,
-    nome_paciente VARCHAR(255) NOT NULL,
-    cpf VARCHAR(14) NOT NULL UNIQUE,
-    data_de_nascimento DATE NOT NULL,
-    telefone_paciente VARCHAR(14),
-    endereco_paciente VARCHAR(255)
-);
-
-CREATE TABLE medico (
+CREATE TABLE IF NOT EXISTS medico (
     id_medico INT AUTO_INCREMENT PRIMARY KEY,
     nome_medico VARCHAR(255) NOT NULL,
     cpf VARCHAR(14) NOT NULL UNIQUE,
@@ -23,22 +12,27 @@ CREATE TABLE medico (
     especialidade VARCHAR(100)
 );
 
-CREATE TABLE quarto (
+-- Tabela cadastro_paciente
+CREATE TABLE IF NOT EXISTS cadastro_paciente (
+    id_paciente INT AUTO_INCREMENT PRIMARY KEY,
+    nome_paciente VARCHAR(255) NOT NULL,
+    cpf VARCHAR(14) NOT NULL UNIQUE,
+    data_de_nascimento DATE NOT NULL,
+    telefone_paciente VARCHAR(14),
+    endereco_paciente VARCHAR(255)
+);
+
+
+-- Tabela quarto
+CREATE TABLE IF NOT EXISTS quarto (
     id_quarto INT AUTO_INCREMENT PRIMARY KEY,
     numero VARCHAR(10) NOT NULL UNIQUE,
     tipo_quarto ENUM('apartamento', 'quarto duplo', 'enfermaria') NOT NULL,
     valor_diaria DECIMAL(10, 2) NOT NULL
 );
 
-CREATE TABLE enfermeiro (
-    id_enfermeiro INT AUTO_INCREMENT PRIMARY KEY,
-    nome_enfermeiro VARCHAR(255) NOT NULL,
-    cpf VARCHAR(14) NOT NULL UNIQUE,
-    cre VARCHAR(20) NOT NULL UNIQUE,
-    telefone VARCHAR(20)
-);
-
-CREATE TABLE internacao (
+-- Tabela internacao
+CREATE TABLE IF NOT EXISTS internacao (
     id_internacao INT AUTO_INCREMENT PRIMARY KEY,
     data_entrada DATE NOT NULL,
     data_prevista_alta DATE,
@@ -52,7 +46,15 @@ CREATE TABLE internacao (
     FOREIGN KEY (id_quarto) REFERENCES quarto(id_quarto)
 );
 
-CREATE TABLE internacao_enfermeiro (
+CREATE TABLE IF NOT EXISTS enfermeiro (
+    id_enfermeiro INT AUTO_INCREMENT PRIMARY KEY,
+    nome_enfermeiro VARCHAR(255) NOT NULL,
+    cpf VARCHAR(14) NOT NULL UNIQUE,
+    cre VARCHAR(20) NOT NULL UNIQUE,
+    telefone VARCHAR(20)
+);
+
+CREATE TABLE IF NOT EXISTS internacao_enfermeiro (
     internacao_id INT,
     enfermeiro_id INT,
     PRIMARY KEY (internacao_id, enfermeiro_id),
@@ -60,12 +62,20 @@ CREATE TABLE internacao_enfermeiro (
     FOREIGN KEY (enfermeiro_id) REFERENCES enfermeiro(id_enfermeiro)
 );
 
-CREATE TABLE especialidade_medica (
+CREATE TABLE IF NOT EXISTS especialidade_medica (
     id_especialidade INT AUTO_INCREMENT PRIMARY KEY,
     nome_especialidade VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE registro_de_consulta (
+CREATE TABLE IF NOT EXISTS medico_especialidade (
+    id_medico INT,
+    id_especialidade INT,
+    PRIMARY KEY (id_medico, id_especialidade),
+    FOREIGN KEY (id_medico) REFERENCES medico(id_medico),
+    FOREIGN KEY (id_especialidade) REFERENCES especialidade_medica(id_especialidade)
+);
+
+CREATE TABLE IF NOT EXISTS registro_de_consulta (
     id_consulta INT AUTO_INCREMENT PRIMARY KEY,
     data_da_consulta DATE,
     medico_da_consulta INT,
@@ -77,7 +87,7 @@ CREATE TABLE registro_de_consulta (
     FOREIGN KEY (paciente_consulta) REFERENCES cadastro_paciente(id_paciente)
 );
 
-CREATE TABLE receita_medica (
+CREATE TABLE IF NOT EXISTS receita_medica (
     id_receita INT AUTO_INCREMENT PRIMARY KEY,
     medicamento VARCHAR(255) NOT NULL,
     quantidade_medicamento INT NOT NULL,
@@ -86,7 +96,7 @@ CREATE TABLE receita_medica (
     FOREIGN KEY (consulta_fk) REFERENCES registro_de_consulta(id_consulta)
 );
 
-CREATE TABLE cadastro_convenio (
+CREATE TABLE IF NOT EXISTS cadastro_convenio (
     data_da_consulta DATE,
     id_medico INT,
     id_paciente INT,
@@ -97,7 +107,7 @@ CREATE TABLE cadastro_convenio (
     FOREIGN KEY (id_paciente) REFERENCES cadastro_paciente(id_paciente)
 );
 
-CREATE TABLE documentos (
+CREATE TABLE IF NOT EXISTS documentos (
     cpf VARCHAR(14) PRIMARY KEY,
     rg VARCHAR(20),
     convenio VARCHAR(255)
