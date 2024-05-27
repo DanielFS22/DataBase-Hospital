@@ -13,7 +13,7 @@ Deseja-se ainda informatizar a receita do médico, de maneira que, no encerramen
 
 ![Diagrama em branco_ Lucidchart - Google Chrome 10_05_2024 23_08_49](https://github.com/DanielFS22/DataBase-Hospital/assets/161477598/04e6c5d7-bac4-4f71-a177-014fd27a40b8)
 
-🔹Parte 2 - Diagrama Entidade Relacionamento
+<h3>🔹Parte 2 - Diagrama Entidade Relacionamento</h3>
 No hospital, as internações têm sido registradas por meio de formulários eletrônicos que gravam os dados em arquivos.
 
 Para cada internação, são anotadas a data de entrada, a data prevista de alta e a data efetiva de alta, além da descrição textual dos procedimentos a serem realizados.
@@ -29,7 +29,7 @@ A internação, obviamente, é vinculada a um paciente – que pode se internar 
 Por último, crie um script SQL para a geração do banco de dados
 ![Diagrama em branco_ Lucidchart e mais 6 páginas - Pessoal — Microsoft​ Edge 20_05_2024 19_34_20](https://github.com/DanielFS22/DataBase-Hospital/assets/161477598/c2456df9-18cd-4350-a9d8-7a6630cb6012)
 
-🔹Parte 3 - Alimentando o banco de dados
+<h3>🔹Parte 3 - Alimentando o banco de dados </h3>
 Crie scripts de povoamento das tabelas desenvolvidas na atividade anterior. Observe as seguintes atividades:
 
 Inclua ao menos dez médicos de
@@ -47,4 +47,9 @@ Considerando que “a princípio o hospital trabalha com apartamentos, quartos d
 Inclua dados de dez profissionais de enfermaria. Associe cada internação a ao menos dois enfermeiros.
 Os dados de tipo de quarto, convênio e especialidade são essenciais para a operação do sistema e, portanto, devem ser povoados assim que o sistema for instalado.
 
+<h3> 🔹Parte 4 - A Ordem do Alterar </h3>
 
+Pensando no banco que já foi criado para o Projeto do Hospital, realize algumas alterações nas tabelas e nos dados usando comandos de atualização e exclusão:
+Crie um script que adicione uma coluna “em_atividade” para os médicos, indicando se ele ainda está atuando no hospital ou não. 
+Crie um script para atualizar ao menos dois médicos como inativos e os demais em atividade.
+![MySQL Workbench 27_05_2024 09_30_20](https://github.com/DanielFS22/DataBase-Hospital/assets/161477598/02facff1-d37c-4b28-b011-933cf54c2652)
