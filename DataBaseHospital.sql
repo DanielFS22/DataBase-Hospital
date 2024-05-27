@@ -272,3 +272,19 @@ INSERT INTO enfermeiro (nome_enfermeiro, cpf, cre, telefone) VALUES
 ('Enfermeiro 8', '888.888.888-88', 'CRE-008', '11999999908'),
 ('Enfermeiro 9', '999.999.999-99', 'CRE-009', '11999999909'),
 ('Enfermeiro 10', '000.000.000-00', 'CRE-010', '11999999910');
+
+
+
+ALTER TABLE medico
+ADD COLUMN em_atividade BOOLEAN DEFAULT TRUE;
+
+-- Atualizar dois médicos como inativos (Dr. João Silva e Dra. Maria Oliveira)
+UPDATE medico 
+SET em_atividade = FALSE
+WHERE cpf IN ('111.111.111-11', '222.222.222-22');
+
+-- Atualizar os outros médicos como ativos
+UPDATE medico 
+SET em_atividade = TRUE
+WHERE cpf NOT IN ('111.111.111-11', '222.222.222-22');
+
