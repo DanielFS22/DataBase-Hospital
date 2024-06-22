@@ -53,3 +53,49 @@ Pensando no banco que já foi criado para o Projeto do Hospital, realize algumas
 Crie um script que adicione uma coluna “em_atividade” para os médicos, indicando se ele ainda está atuando no hospital ou não. 
 Crie um script para atualizar ao menos dois médicos como inativos e os demais em atividade.
 ![MySQL Workbench 27_05_2024 09_30_20](https://github.com/DanielFS22/DataBase-Hospital/assets/161477598/02facff1-d37c-4b28-b011-933cf54c2652)
+
+<h3> 🔹Parte 5 - As Relíquias dos Dados </h3>
+
+Uma vez que o banco estiver bem estruturado e desenhado, é possível realizar testes, simulando relatórios ou telas que o sistema possa necessitar. A tarefa consiste em criar consultas que levem aos resultados esperados.
+
+<strong>Consultas e Valores Médios: </strong>
+
+Consulta de todos os dados e valor médio das consultas realizadas no ano de 2020.
+Consulta de todos os dados e valor médio das consultas realizadas sob convênio.
+
+<strong>Internações com Data de Alta Maior que Prevista: </strong>
+
+Consulta dos dados das internações que tiveram a data de alta maior que a data prevista.
+
+<strong>Receituário da Primeira Consulta com Receituário Associado:</strong>
+
+Consulta do receituário completo da primeira consulta registrada com receituário associado.
+
+<strong>Consulta de Maior e Menor Valor: <strong/>
+Consulta dos dados da consulta de maior valor e da consulta de menor valor (ambas não realizadas sob convênio).
+
+<strong>Internações com Detalhes e Total de Internação:</strong>
+
+Consulta dos dados das internações em seus respectivos quartos, incluindo o total da internação baseado no valor da diária do quarto e o número de dias entre a entrada e a alta.
+
+<strong>Internações em Quartos do Tipo "Apartamento":</strong>
+
+Consulta da data, procedimento e número de quarto de internações em quartos do tipo "apartamento".
+
+<strong>Consultas de Menores de 18 Anos com Especialidades Diferentes de Pediatria:</strong>
+
+Consulta do nome do paciente, data da consulta e especialidade de consultas em que os pacientes eram menores de 18 anos na data da consulta e cuja especialidade não é "pediatria", ordenadas por data de realização da consulta.
+
+<strong>Internações por Médicos da Especialidade "Gastroenterologia" em Enfermarias:</strong>
+
+Consulta do nome do paciente, nome do médico, data da internação e procedimentos das internações realizadas por médicos da especialidade "gastroenterologia", que tenham acontecido em "enfermaria".
+
+<strong>Quantidade de Consultas por Médico:</strong>
+
+Consulta dos nomes dos médicos, seus CRMs e a quantidade de consultas que cada um realizou.
+<strong>Médicos com "Gabriel" no Nome:</strong>
+
+Consulta dos médicos que têm "Gabriel" no nome.
+<strong>Enfermeiros com Mais de Uma Internação:</strong>
+
+Consulta dos nomes, CREs e número de internações de enfermeiros que participaram de mais de uma internação.
